@@ -14,7 +14,6 @@ class ScramAuthenticator {
         'sha-512' => 'sha512',
         'sha512'  => 'sha512'
     );
-
     private function getHashAlgorithm($scramAlgorithm) {
         $parts = explode('-', strtolower($scramAlgorithm));
         return $this->hashes[$parts[1]] ?? 'sha1'; // Default to sha1 if the algorithm is not found
